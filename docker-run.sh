@@ -3,6 +3,7 @@
 docker run -d --name="Zoneminder" \
 --net="bridge" \
 --privileged="true" \
+-p 86:80/tcp \
 -p 8443:443/tcp \
 -p 9000:9000/tcp \
 -e TZ="America/New_York" \
@@ -17,6 +18,6 @@ docker run -d --name="Zoneminder" \
 -e INSTALL_YOLOV4="0" \
 -e MULTI_PORT_START="0" \
 -e MULTI_PORT_END="0" \
--v "/mnt/cache/appdata/Zoneminder":"/config":rw \
--v "/mnt/cache/appdata/Zoneminder/data":"/var/cache/zoneminder":rw \
+-v "/home/baum/src/zoneminder/zoneminder/data":"/config":rw \
+-v "/home/baum/src/zoneminder/zoneminder/data":"/var/cache/zoneminder":rw \
 dlandon/zoneminder
